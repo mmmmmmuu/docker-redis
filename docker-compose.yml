@@ -1,0 +1,11 @@
+version: '2'
+services:
+  sentinel-redis:
+    image: registry.happycfc.com/test/sentinel-redis:1.0
+    stdin_open: true
+    tty: true
+    labels:
+      traefik.frontend.rule: Host:sit-qa-base-sentinel-redis.happycfc.net
+      traefik.port: '8000'
+      traefik.enable: 'true'
+      io.rancher.container.pull_image: always
